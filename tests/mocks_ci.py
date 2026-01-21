@@ -70,9 +70,14 @@ class MockBMP280_I2C:
     sea_level_pressure = 1013.25
 
 
-# Module adafruit_bmp
+# Module adafruit_bmp (alias pour compatibilité)
 adafruit_bmp = MagicMock()
 adafruit_bmp.BMP280_I2C = MockBMP280_I2C
+
+# Module adafruit_bmp280 (nom correct du paquet)
+adafruit_bmp280 = MagicMock()
+adafruit_bmp280.Adafruit_BMP280_I2C = MockBMP280_I2C
+adafruit_bmp280.BMP280_I2C = MockBMP280_I2C  # Alias pour compatibilité
 
 # Module adafruit_blinka (module de compatibilité)
 adafruit_blinka = MagicMock()
